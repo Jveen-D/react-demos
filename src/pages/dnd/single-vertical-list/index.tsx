@@ -4,17 +4,17 @@ import { DragDropContext, Droppable, Draggable } from "@hello-pangea/dnd";
 const initialStateTodos = [
 	{
 		id: 1,
-		title: "Ir de Juerga",
+		title: "111111111",
 		completed: false,
 	},
 	{
 		id: 2,
-		title: "Ir al gimnasio",
+		title: "2222222222",
 		completed: false,
 	},
 	{
 		id: 3,
-		title: "Estudiar React",
+		title: "33333333333",
 		completed: true,
 	},
 ];
@@ -23,8 +23,20 @@ type SingleVerticalListProps = {};
 
 const SingleVerticalList: React.FC<SingleVerticalListProps> = (props) => {
 	const [todos, setTodos] = React.useState(initialStateTodos);
-	const handleDragEnd = (result) => {
-		console.log(result);
+	const onBeforeCapture = (e) => {
+		console.log("🚀 ~ onBeforeCapture ~ onBeforeCapture:", e);
+	};
+	const onBeforeDragStart = (e) => {
+		console.log("🚀 ~ onBeforeDragStart ~ onBeforeDragStart:", e);
+	};
+	const onDragStart = (e) => {
+		console.log("🚀 ~ onDragStart ~ onDragStart:", e);
+	};
+	const onDragUpdate = (e) => {
+		console.log("🚀 ~ onDragUpdate ~ onDragUpdate:", e);
+	};
+	const onDragEnd = (result) => {
+		console.log("🚀 ~ handleDragEnd ~ result:", result);
 		if (!result.destination) return;
 		const startIndex = result.source.index;
 		const endIndex = result.destination.index;
@@ -32,9 +44,16 @@ const SingleVerticalList: React.FC<SingleVerticalListProps> = (props) => {
 		const [reorderTodo] = copyTodos.splice(startIndex, 1);
 		copyTodos.splice(endIndex, 0, reorderTodo);
 		setTodos(copyTodos);
+		return false;
 	};
 	return (
-		<DragDropContext onDragEnd={handleDragEnd}>
+		<DragDropContext
+			onBeforeCapture={onBeforeCapture}
+			onBeforeDragStart={onBeforeDragStart}
+			onDragStart={onDragStart}
+			onDragUpdate={onDragUpdate}
+			onDragEnd={onDragEnd}
+		>
 			<h1>Todo App</h1>
 			<Droppable droppableId="todos" direction={"horizontal"}>
 				{(droppableProvider) => (
