@@ -35,11 +35,11 @@ const SingleVerticalList: React.FC<SingleVerticalListProps> = (props) => {
 	const onDragUpdate = (e) => {
 		console.log("🚀 ~ onDragUpdate ~ onDragUpdate:", e);
 	};
-	const onDragEnd = (result) => {
-		console.log("🚀 ~ handleDragEnd ~ result:", result);
-		if (!result.destination) return;
-		const startIndex = result.source.index;
-		const endIndex = result.destination.index;
+	const onDragEnd = (e) => {
+		console.log("🚀 ~ handleDragEnd ~ result:", e);
+		if (!e.destination) return;
+		const startIndex = e.source.index;
+		const endIndex = e.destination.index;
 		const copyTodos = [...todos];
 		const [reorderTodo] = copyTodos.splice(startIndex, 1);
 		copyTodos.splice(endIndex, 0, reorderTodo);
