@@ -3,19 +3,46 @@ import { DragDropContext, Droppable, Draggable } from "@hello-pangea/dnd";
 
 const initialStateTodos = [
 	{
+		id: 0,
+		index: 0,
+		title: "0000000000",
+		completed: false,
+	},
+	{
 		id: 1,
+		index: 1,
 		title: "111111111",
 		completed: false,
 	},
 	{
 		id: 2,
+		index: 2,
 		title: "2222222222",
-		completed: false,
+		completed: true,
 	},
 	{
 		id: 3,
-		title: "33333333333",
-		completed: true,
+		index: 3,
+		title: "3333333333",
+		completed: false,
+	},
+	{
+		id: 4,
+		index: 4,
+		title: "444444444",
+		completed: false,
+	},
+	{
+		id: 5,
+		index: 5,
+		title: "5555555555",
+		completed: false,
+	},
+	{
+		id: 6,
+		index: 6,
+		title: "66666666",
+		completed: false,
 	},
 ];
 
@@ -57,30 +84,129 @@ const SingleVerticalList: React.FC<SingleVerticalListProps> = (props) => {
 			<h1>Todo App</h1>
 			<Droppable droppableId="todos" direction={"horizontal"}>
 				{(droppableProvider) => (
-					<ul
-						style={{
-							display: "flex",
-							flexDirection: "row",
-							gap: "20px",
-						}}
+					<div
 						ref={droppableProvider.innerRef}
 						{...droppableProvider.droppableProps}
 					>
-						{todos.map((todo, index) => (
-							<Draggable index={index} key={todo.id} draggableId={`${todo.id}`}>
-								{(draggableProvider) => (
-									<li
-										ref={draggableProvider.innerRef}
-										{...draggableProvider.draggableProps}
-										{...draggableProvider.dragHandleProps}
-									>
-										{todo.title}
-									</li>
-								)}
-							</Draggable>
-						))}
+						<div
+							style={{
+								display: "flex",
+								flexDirection: "row",
+								gap: "20px",
+							}}
+						>
+							{todos.slice(0, 2).map((todo) => (
+								<Draggable
+									index={todo.index}
+									key={todo.id}
+									draggableId={`${todo.id}`}
+								>
+									{(draggableProvider, snapshot) => {
+										const { draggableProps, dragHandleProps } =
+											draggableProvider;
+										const draggableStyle = draggableProps?.style || {};
+
+										return (
+											<div
+												ref={draggableProvider.innerRef}
+												{...draggableProps}
+												{...dragHandleProps}
+												style={{
+													...draggableStyle,
+													border: "1px solid #000",
+													padding: "10px",
+													backgroundColor: snapshot.isDragging
+														? "lightgreen"
+														: "white",
+												}}
+											>
+												{todo.title}
+											</div>
+										);
+									}}
+								</Draggable>
+							))}
+						</div>
+						<div
+							style={{
+								display: "flex",
+								flexDirection: "row",
+								gap: "20px",
+							}}
+						>
+							{todos.slice(2, 4).map((todo) => (
+								<Draggable
+									index={todo.index}
+									key={todo.id}
+									draggableId={`${todo.id}`}
+								>
+									{(draggableProvider, snapshot) => {
+										const { draggableProps, dragHandleProps } =
+											draggableProvider;
+										const draggableStyle = draggableProps?.style || {};
+
+										return (
+											<div
+												ref={draggableProvider.innerRef}
+												{...draggableProps}
+												{...dragHandleProps}
+												style={{
+													...draggableStyle,
+													border: "1px solid #000",
+													padding: "10px",
+													backgroundColor: snapshot.isDragging
+														? "lightgreen"
+														: "white",
+												}}
+											>
+												{todo.title}
+											</div>
+										);
+									}}
+								</Draggable>
+							))}
+						</div>
+						<div
+							style={{
+								display: "flex",
+								flexDirection: "row",
+								gap: "20px",
+							}}
+						>
+							{todos.slice(4).map((todo) => (
+								<Draggable
+									index={todo.index}
+									key={todo.id}
+									draggableId={`${todo.id}`}
+								>
+									{(draggableProvider, snapshot) => {
+										const { draggableProps, dragHandleProps } =
+											draggableProvider;
+										const draggableStyle = draggableProps?.style || {};
+
+										return (
+											<div
+												ref={draggableProvider.innerRef}
+												{...draggableProps}
+												{...dragHandleProps}
+												style={{
+													...draggableStyle,
+													border: "1px solid #000",
+													padding: "10px",
+													backgroundColor: snapshot.isDragging
+														? "lightgreen"
+														: "white",
+												}}
+											>
+												{todo.title}
+											</div>
+										);
+									}}
+								</Draggable>
+							))}
+						</div>
 						{droppableProvider.placeholder}
-					</ul>
+					</div>
 				)}
 			</Droppable>
 		</DragDropContext>
