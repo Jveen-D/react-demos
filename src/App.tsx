@@ -5,6 +5,7 @@ import SingleVerticalList2 from "@/pages/dnd/single-vertical-list2";
 import SingleVerticalList3 from "@/pages/dnd/single-vertical-list3";
 import GanttProject from "@/pages/ganttProject";
 import React183 from "./pages/react18";
+import Ysy from "./pages/ysy";
 function App() {
   return (
     <>
@@ -24,6 +25,7 @@ function App() {
           />
           <Route path="/react183" element={<React183 />} />
           <Route path="/ganttProject" element={<GanttProject />} />
+          <Route path="/ysy" element={<Ysy />} />
         </Routes>
       </Suspense>
     </>

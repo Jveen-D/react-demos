@@ -10,4 +10,13 @@ export default defineConfig({
       "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
   },
+  proxy: {
+    "/ysy": {
+      target: "https://open.ys7.com", // 真实地址
+      changeOrigin: true,
+      pathRewrite: {
+        "/ysy": "",
+      },
+    },
+  },
 });

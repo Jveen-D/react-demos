@@ -11,7 +11,9 @@
   },
   "dependencies": {
     "@hello-pangea/dnd": "^16.6.0",
+    "antd": "^5.17.4",
     "antd-style": "^3.6.2",
+    "ezuikit-js": "^8.0.5",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.4",
     "react": "^18.3.1",
