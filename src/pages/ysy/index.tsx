@@ -12,6 +12,7 @@ const Ysy: React.FC<YsyProps> = (props) => {
       accessToken:
         "at.3x8s6h2h6p43gice98yfv3hm7ufv9ud3-231pseo9fb-1luef4x-zmuqbfqav",
       url: "ezopen://open.ys7.com/G65720799/1.hd.live",
+      template: "security",
       width: 800,
       height: 800,
     });
