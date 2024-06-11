@@ -9,12 +9,7 @@ const useStyles = createStyles(({ cx, css, prefixCls, token, responsive }) => {
 	 * 🚀 xxl: 1600
 	 * */
 	return {
-		Ysy: css`
-		#videoElement{
-			width: 800px;
-			height: 600px;
-		}
-		`,
+		Luma: css``,
 	};
 });
 export default useStyles;
