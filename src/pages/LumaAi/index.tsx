@@ -4,7 +4,7 @@ import { WebGLRenderer, PerspectiveCamera, Scene, Color, FogExp2 } from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { Object3DNode, extend } from "@react-three/fiber";
 import { LumaSplatsThree, LumaSplatsSemantics } from "@lumaai/luma-web";
-import file from "@/assets/mp4/WeChat_20240611162924.mp4";
+// import file from "@/assets/mp4/WeChat_20240611162924.mp4";
 
 type LumaProps = {};
 
@@ -87,7 +87,7 @@ const Luma: React.FC<LumaProps> = (props) => {
   const handleUpload = () => {
     const requestOptions = {
       method: "PUT",
-      body: file,
+      // body: file,
       redirect: "follow",
     };
 

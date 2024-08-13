@@ -1,0 +1,72 @@
+export const mockData = {
+  generalContractCategories: [
+    {
+      categoryName: "总包合同",
+      categoryType: "SUBCONTRACTING ",
+      childrenCategories: [
+        {
+          categoryName: "涂装车间",
+          categoryType: "SUBCONTRACTING ",
+          childrenCategories: [],
+          contractCategoryUuid: "1-2",
+          ownedOrgType: "PROJECT ",
+          parentCategoryUuid: "1-1",
+          projectId: "projectId",
+        },
+        {
+          categoryName: "总装车间",
+          categoryType: "SUBCONTRACTING ",
+          childrenCategories: [],
+          contractCategoryUuid: "1-3",
+          ownedOrgType: "PROJECT ",
+          parentCategoryUuid: "1-1",
+          projectId: "projectId",
+        },
+        {
+          categoryName: "总装车间3",
+          categoryType: "SUBCONTRACTING ",
+          childrenCategories: [],
+          contractCategoryUuid: "1-4",
+          ownedOrgType: "PROJECT ",
+          parentCategoryUuid: "1-1",
+          projectId: "projectId",
+        },
+        {
+          categoryName: "总装车间4",
+          categoryType: "SUBCONTRACTING ",
+          childrenCategories: [],
+          contractCategoryUuid: "1-5",
+          ownedOrgType: "PROJECT ",
+          parentCategoryUuid: "1-1",
+          projectId: "projectId",
+        },
+      ],
+      contractCategoryUuid: "1-1",
+      ownedOrgType: "PROJECT ",
+      parentCategoryUuid: "0",
+      projectId: "projectId",
+    },
+  ],
+  purchaseSaleCategories: [
+    {
+      categoryName: "分包合同",
+      categoryType: "veniam",
+      childrenCategories: [],
+      contractCategoryUuid: "2-1",
+      ownedOrgType: "PROJECT ",
+      parentCategoryUuid: "0",
+      projectId: "72",
+    },
+  ],
+  subcontractingCategories: [
+    {
+      categoryName: "物资销售合同",
+      categoryType: "irure dolor aliquip pariatur sint",
+      childrenCategories: [],
+      contractCategoryUuid: "3-1",
+      ownedOrgType: "commodo aliquip ex",
+      parentCategoryUuid: "0",
+      projectId: "20",
+    },
+  ],
+};

@@ -6,6 +6,7 @@ import SingleVerticalList3 from "@/pages/dnd/single-vertical-list3";
 import GanttProject from "@/pages/ganttProject";
 import React183 from "./pages/react18";
 import Luma from "./pages/LumaAi";
+import Drag from "./pages/drag";
 function App() {
   return (
     <>
@@ -26,6 +27,7 @@ function App() {
           <Route path="/react183" element={<React183 />} />
           <Route path="/ganttProject" element={<GanttProject />} />
           <Route path="/luma" element={<Luma />} />
+          <Route path="/drag" element={<Drag />} />
         </Routes>
       </Suspense>
     </>
